@@ -196,9 +196,9 @@ label.hamburger-btn{display:flex;}
 .mini-area-grid{
   position:relative; z-index:1;
   display:grid;
-  grid-template-columns:repeat(2, 1fr);
+  grid-template-columns:repeat(4, 1fr);
   gap:8px;
-  max-width:320px;
+  max-width:480px;
   margin-left:auto;
   margin-right:0;
 }
@@ -216,7 +216,7 @@ label.hamburger-btn{display:flex;}
 }
 .mini-area-card:hover img{transform:scale(1.06);}
 @media (max-width:860px){
-  .mini-area-grid{max-width:280px; margin:0 auto;}
+  .mini-area-grid{grid-template-columns:repeat(2,1fr); max-width:280px; margin:0 auto;}
 }
 
 /* ---- Card grid (Books) ---- */
