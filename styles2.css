@@ -197,22 +197,22 @@ label.hamburger-btn{display:flex;}
   position:relative; z-index:1;
   display:grid;
   grid-template-columns:repeat(4, 1fr);
-  gap:8px;
-  max-width:480px;
+  gap:12px;
+  max-width:720px;
   margin-left:auto;
   margin-right:0;
 }
 .mini-area-card{
-  position:relative; border-radius:6px; overflow:hidden;
+  position:relative; border-radius:8px; overflow:hidden;
   text-decoration:none; aspect-ratio:1/1; display:block;
-  border:2px solid #fff;
+  border:3px solid #fff;
 }
 .mini-area-card img{width:100%; height:100%; object-fit:cover; transition:transform 0.25s;}
 .mini-area-card span{
   position:absolute; bottom:0; left:0; right:0;
   background:linear-gradient(transparent, rgba(0,0,0,0.82));
-  color:#fff; padding:14px 6px 6px; font-weight:800; font-size:0.62rem;
-  text-transform:uppercase; letter-spacing:0.01em; line-height:1.15;
+  color:#fff; padding:20px 8px 8px; font-weight:800; font-size:0.8rem;
+  text-transform:uppercase; letter-spacing:0.01em; line-height:1.2;
 }
 .mini-area-card:hover img{transform:scale(1.06);}
 @media (max-width:860px){
