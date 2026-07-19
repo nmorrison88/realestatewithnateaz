@@ -56,42 +56,21 @@ label.hamburger-btn{display:flex;}
 .breadcrumb a{text-decoration:none; color:var(--blue); font-weight:700;}
 .breadcrumb a:hover{text-decoration:underline;}
 
-/* ---- Hero (Home page only): full-bleed photo bg with real text over it ---- */
-.hero-banner{
-  position:relative;
-  min-height:100vh;
-  min-height:100dvh;
-  display:flex;
-  align-items:center;
-  background-size:cover;
-  background-position:center;
-  padding:90px 6vw 60px;
-}
-.hero-banner::before{
-  content:"";
-  position:absolute; inset:0;
-  background:linear-gradient(100deg, rgba(10,20,30,0.72) 0%, rgba(10,20,30,0.42) 45%, rgba(10,20,30,0.1) 75%);
-}
-.hero-banner .hero-content{position:relative; z-index:2; max-width:640px; color:#fff;}
-.hero-banner .logo-tag{
+/* ---- Content sections ---- */
+.content-text .logo-tag{
   display:inline-block;
   background:#E0538A;
   border:2px solid #fff;
   color:#fff;
   font-weight:900;
-  font-size:1.6rem;
+  font-size:1.5rem;
   letter-spacing:0.02em;
-  padding:10px 22px;
+  padding:10px 20px;
   border-radius:4px;
-  margin-bottom:22px;
+  margin-bottom:18px;
   text-transform:uppercase;
   line-height:1.15;
 }
-.hero-banner h1{font-size:clamp(1.8rem, 4vw, 2.6rem); margin:0 0 4px; font-weight:800;}
-.hero-banner .role{font-size:1.1rem; font-weight:700; opacity:0.92; margin:0 0 28px;}
-.hero-banner .btn-row{justify-content:flex-start; padding:0; margin:0;}
-
-/* ---- Content sections ---- */
 .content-section{
   position:relative;
   padding:64px 6vw 70px;
@@ -239,14 +218,14 @@ label.hamburger-btn{display:flex;}
 .contact-card .value{font-size:1.18rem; font-weight:800;}
 
 /* ---- Footer ---- */
-footer{background:var(--dark); color:#eee; padding:52px 6vw 30px;}
-footer .foot-inner{max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px;}
-footer h3{margin:0 0 12px; font-size:1rem; color:#fff;}
-footer ul{list-style:none; margin:0; padding:0;}
-footer li{margin-bottom:8px;}
-footer a{color:#ccc; text-decoration:none; font-size:0.9rem;}
-footer a:hover{color:var(--orange);}
-footer .copyright{max-width:1100px; margin:36px auto 0; padding-top:20px; border-top:1px solid #333; font-size:0.8rem; color:#888; text-align:center;}
+.site-footer{
+  background:var(--cream);
+  color:#8a7a68;
+  text-align:center;
+  font-size:0.82rem;
+  padding:22px 6vw;
+  border-top:1px solid #ece3d6;
+}
 
 /* ---- Responsive ---- */
 @media (max-width:860px){
