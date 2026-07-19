@@ -118,12 +118,23 @@ label.hamburger-btn{display:flex;}
 .content-text p.body-text{
   font-size:1.15rem; line-height:1.65; opacity:0.95; margin:0 0 30px; max-width:56ch;
 }
+.content-photo{
+  aspect-ratio:4/3;
+  border:10px solid #fff;
+  box-shadow:0 6px 24px rgba(0,0,0,0.18);
+  overflow:hidden;
+}
 .content-photo img{
-  width:100%; border-radius:10px; box-shadow:0 20px 46px rgba(0,0,0,0.25);
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+.content-photo.no-frame{
+  aspect-ratio:auto;
+  border:none;
+  box-shadow:none;
+  overflow:visible;
 }
 .content-photo.no-frame img{
-  border-radius:0;
-  box-shadow:none;
+  width:100%; height:auto; object-fit:contain;
 }
 
 /* ---- Bullet list (feature rows) ---- */
@@ -151,7 +162,7 @@ label.hamburger-btn{display:flex;}
 }
 .pill-btn:hover{transform:translateY(-2px); box-shadow:0 10px 22px rgba(0,0,0,0.18);}
 .theme-light .pill-btn{background:var(--dark); color:#fff;}
-.pill-btn .ext{font-size:0.72rem; opacity:0.65;}
+
 
 /* ---- Featured listing callout (Home page) ---- */
 .featured-callout{max-width:1180px; margin:0 auto; padding:0 6vw 70px;}
