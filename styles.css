@@ -50,7 +50,7 @@ a{color:inherit;}
 .hamburger-btn .bar::before{top:-7px;}
 .hamburger-btn .bar::after{top:7px;}
 
-#nav-toggle{display:none;}
+.nav-checkbox{display:none;}
 
 .nav-overlay{
   position:fixed;
@@ -67,7 +67,7 @@ a{color:inherit;}
   transform:translateY(-8px);
   transition:opacity 0.2s ease, transform 0.2s ease;
 }
-#nav-toggle:checked ~ .nav-overlay{
+.nav-checkbox:checked ~ .nav-overlay{
   opacity:1;
   pointer-events:auto;
   transform:translateY(0);
