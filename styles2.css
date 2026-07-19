@@ -57,23 +57,20 @@ label.hamburger-btn{display:flex;}
 .breadcrumb a:hover{text-decoration:underline;}
 
 /* ---- Content sections ---- */
-.content-text .logo-tag{
-  display:inline-block;
-  background:#E0538A;
-  border:2px solid #fff;
-  color:#fff;
-  font-weight:900;
-  font-size:1.5rem;
-  letter-spacing:0.02em;
-  padding:10px 20px;
-  border-radius:4px;
-  margin-bottom:18px;
-  text-transform:uppercase;
-  line-height:1.15;
+.content-text .logo-img{
+  display:block;
+  max-width:340px;
+  width:60%;
+  height:auto;
+  margin-bottom:20px;
 }
 .content-section{
   position:relative;
-  padding:64px 6vw 70px;
+  min-height:100vh;
+  min-height:100dvh;
+  display:flex;
+  align-items:center;
+  padding:90px 6vw 60px;
   overflow:hidden;
 }
 .content-section.theme-blue{background:var(--blue); color:#fff;}
@@ -91,6 +88,7 @@ label.hamburger-btn{display:flex;}
 
 .content-grid{
   position:relative; z-index:1;
+  width:100%;
   max-width:1180px; margin:0 auto;
   display:grid;
   grid-template-columns:1.1fr 0.9fr;
@@ -104,20 +102,24 @@ label.hamburger-btn{display:flex;}
 .content-grid.photo-left > *{direction:ltr;}
 
 .content-text h1{
-  font-size:clamp(2.4rem, 5.2vw, 4rem);
+  font-size:clamp(2.8rem, 6vw, 4.6rem);
   font-weight:900;
-  margin:0 0 10px;
-  line-height:1.03;
+  margin:0 0 12px;
+  line-height:1.02;
   letter-spacing:-0.01em;
 }
 .content-text .subhead{
-  font-size:1.3rem; font-weight:700; opacity:0.92; margin:0 0 22px;
+  font-size:1.5rem; font-weight:700; opacity:0.92; margin:0 0 26px;
 }
 .content-text p.body-text{
-  font-size:1.02rem; line-height:1.6; opacity:0.95; margin:0 0 26px; max-width:56ch;
+  font-size:1.15rem; line-height:1.65; opacity:0.95; margin:0 0 30px; max-width:56ch;
 }
 .content-photo img{
   width:100%; border-radius:10px; box-shadow:0 20px 46px rgba(0,0,0,0.25);
+}
+.content-photo.no-frame img{
+  border-radius:0;
+  box-shadow:none;
 }
 
 /* ---- Bullet list (feature rows) ---- */
@@ -138,17 +140,13 @@ label.hamburger-btn{display:flex;}
 .pill-btn{
   display:inline-flex; align-items:center; gap:8px;
   background:#fff; color:var(--dark);
-  text-decoration:none; padding:15px 30px; border-radius:999px;
-  font-weight:800; font-size:0.98rem;
+  text-decoration:none; padding:18px 34px; border-radius:999px;
+  font-weight:800; font-size:1.05rem;
   border:2px solid transparent;
   transition:all 0.15s;
 }
 .pill-btn:hover{transform:translateY(-2px); box-shadow:0 10px 22px rgba(0,0,0,0.18);}
-.pill-btn.outline{background:transparent; border-color:#fff; color:#fff;}
-.pill-btn.outline:hover{background:#fff; color:var(--dark);}
 .theme-light .pill-btn{background:var(--dark); color:#fff;}
-.theme-light .pill-btn.outline{background:transparent; border-color:var(--dark); color:var(--dark);}
-.theme-light .pill-btn.outline:hover{background:var(--dark); color:#fff;}
 .pill-btn .ext{font-size:0.72rem; opacity:0.65;}
 
 /* ---- Featured listing callout (Home page) ---- */
@@ -236,7 +234,7 @@ label.hamburger-btn{display:flex;}
 }
 @media (max-width:600px){
   .content-section{padding:48px 6vw 54px;}
-  .content-text h1{font-size:2rem;}
+  .content-text h1{font-size:2.4rem;}
   .pill-btn{padding:14px 24px; font-size:0.92rem;}
   .nav-overlay a{font-size:1.15rem;}
 }
