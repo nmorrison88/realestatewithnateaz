@@ -48,13 +48,17 @@ a{color:inherit;}
 .nav-overlay .brand-tag{position:absolute; top:22px; left:24px; color:#fff; opacity:0.6; font-size:0.9rem; font-weight:700;}
 label.hamburger-btn{display:flex;}
 
-/* ---- Breadcrumb ---- */
-.breadcrumb{
-  padding:18px 24px 0;
-  font-size:0.85rem;
+/* ---- Back button (floating, no bar) ---- */
+.back-btn{
+  position:fixed; top:16px; left:16px; z-index:300;
+  width:50px; height:50px; border-radius:50%;
+  background:rgba(255,255,255,0.94); backdrop-filter:blur(6px);
+  box-shadow:0 3px 12px rgba(0,0,0,0.18);
+  display:flex; align-items:center; justify-content:center;
+  text-decoration:none;
 }
-.breadcrumb a{text-decoration:none; color:var(--blue); font-weight:700;}
-.breadcrumb a:hover{text-decoration:underline;}
+.back-btn .arrow{color:var(--dark); font-size:1.4rem; font-weight:900; line-height:1;}
+.back-btn:hover{background:#fff;}
 
 /* ---- Content sections ---- */
 .content-text .logo-img{
