@@ -15,68 +15,164 @@ body{
 img{display:block;width:100%;height:auto;}
 a{color:inherit;}
 
-/* ---- Top Nav ---- */
-header.site-nav{
-  position:sticky;
-  top:0;
-  z-index:100;
-  min-height:var(--nav-height);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:10px 24px;
-  background:rgba(255,255,255,0.97);
+/* ---- Floating hamburger + overlay nav ---- */
+.hamburger-btn{
+  position:fixed;
+  top:16px;
+  right:16px;
+  z-index:300;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.94);
   backdrop-filter:blur(6px);
-  box-shadow:0 1px 0 rgba(0,0,0,0.08);
-  flex-wrap:wrap;
-}
-header.site-nav .brand{
-  font-weight:800;
-  font-size:1.05rem;
-  letter-spacing:0.02em;
-  color:var(--dark);
-  text-decoration:none;
-  white-space:nowrap;
-}
-header.site-nav nav{
+  border:none;
+  box-shadow:0 3px 12px rgba(0,0,0,0.18);
+  cursor:pointer;
   display:flex;
-  gap:20px;
   align-items:center;
-  flex-wrap:wrap;
+  justify-content:center;
 }
-header.site-nav nav a{
-  color:var(--dark);
-  text-decoration:none;
-  font-size:0.86rem;
-  font-weight:600;
-  opacity:0.8;
-  white-space:nowrap;
-}
-header.site-nav nav a.active{opacity:1; color:var(--accent);}
-header.site-nav nav a:hover{opacity:1; color:var(--accent);}
-header.site-nav .nav-cta{
+.hamburger-btn .bar{
+  position:relative;
+  width:22px;
+  height:2px;
   background:var(--dark);
-  color:#fff !important;
-  padding:9px 16px;
-  border-radius:4px;
-  font-size:0.84rem;
+}
+.hamburger-btn .bar::before, .hamburger-btn .bar::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:22px;
+  height:2px;
+  background:var(--dark);
+}
+.hamburger-btn .bar::before{top:-7px;}
+.hamburger-btn .bar::after{top:7px;}
+
+#nav-toggle{display:none;}
+
+.nav-overlay{
+  position:fixed;
+  inset:0;
+  z-index:250;
+  background:rgba(18,18,18,0.97);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(-8px);
+  transition:opacity 0.2s ease, transform 0.2s ease;
+}
+#nav-toggle:checked ~ .nav-overlay{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+.nav-overlay a{
+  color:#fff;
+  font-size:1.5rem;
   font-weight:700;
-  opacity:1 !important;
+  text-decoration:none;
+  opacity:0.85;
 }
-header.site-nav .nav-cta:hover{background:var(--accent);}
+.nav-overlay a.active{opacity:1; color:var(--accent);}
+.nav-overlay a:hover{opacity:1; color:var(--accent-warm);}
+.nav-overlay .nav-cta{
+  margin-top:12px;
+  background:var(--accent);
+  color:#fff;
+  padding:14px 30px;
+  border-radius:999px;
+  font-size:1.05rem;
+}
+.nav-overlay .brand-tag{
+  position:absolute;
+  top:22px;
+  left:24px;
+  color:#fff;
+  opacity:0.6;
+  font-size:0.9rem;
+  font-weight:700;
+  letter-spacing:0.02em;
+}
+label.hamburger-btn{display:flex;}
 
-/* ---- Breadcrumb ---- */
+/* ---- Breadcrumb (floats over hero, doesn't add page height) ---- */
 .breadcrumb{
-  max-width:1100px;
-  margin:18px auto 0;
-  padding:0 24px;
-  font-size:0.85rem;
+  position:absolute;
+  top:16px;
+  left:16px;
+  z-index:20;
+  font-size:0.82rem;
+  background:rgba(255,255,255,0.88);
+  backdrop-filter:blur(4px);
+  padding:8px 14px;
+  border-radius:999px;
 }
-.breadcrumb a{text-decoration:none; color:var(--accent); font-weight:600;}
-.breadcrumb a:hover{text-decoration:underline;}
+.breadcrumb a{text-decoration:none; color:var(--dark); font-weight:700;}
+.breadcrumb a:hover{color:var(--accent);}
 
-/* ---- Hero image ---- */
+/* ---- Hero image: fits the viewport so buttons never need a scroll ---- */
 .hero-img{line-height:0;}
+.hero-wrap{
+  position:relative;
+  line-height:0;
+  margin:0 auto;
+  width:min(100%, calc(100vh * 16 / 9));
+  aspect-ratio:16/9;
+  max-height:100vh;
+  overflow:hidden;
+  background:#000;
+}
+.hero-wrap img{width:100%; height:100%; object-fit:cover;}
+.hotspot{
+  position:absolute;
+  display:block;
+  cursor:pointer;
+  border-radius:999px;
+  transition:background 0.15s, box-shadow 0.15s;
+}
+.hotspot:hover, .hotspot:focus-visible{
+  background:rgba(255,255,255,0.22);
+  box-shadow:0 0 0 3px rgba(255,255,255,0.55) inset;
+  outline:none;
+}
+
+/* ---- Featured listing callout ---- */
+.featured-callout{
+  max-width:1100px;
+  margin:0 auto;
+  padding:40px 24px 60px;
+}
+.featured-callout .card{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:stretch;
+  border:1px solid #e6ddd2;
+  border-radius:12px;
+  overflow:hidden;
+  text-decoration:none;
+  color:var(--dark);
+  transition:box-shadow 0.15s, transform 0.15s;
+}
+.featured-callout .card:hover{box-shadow:0 14px 30px rgba(0,0,0,0.12); transform:translateY(-2px);}
+.featured-callout .card img{width:280px; flex-shrink:0; object-fit:cover; height:100%;}
+.featured-callout .card .text{padding:24px 28px; display:flex; flex-direction:column; justify-content:center; gap:6px;}
+.featured-callout .label{
+  font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;
+  color:var(--accent-warm); font-weight:800;
+}
+.featured-callout .title{font-size:1.3rem; font-weight:800;}
+.featured-callout .sub{color:#666; font-size:0.95rem;}
+.featured-callout .cta{margin-top:8px; font-weight:700; color:var(--accent); font-size:0.9rem;}
+@media (max-width:600px){
+  .featured-callout .card{flex-direction:column;}
+  .featured-callout .card img{width:100%; height:180px;}
+}
 
 /* ---- Button rows ---- */
 .btn-row{
@@ -159,35 +255,6 @@ header.site-nav .nav-cta:hover{background:var(--accent);}
 .area-card:hover img{transform:scale(1.04);}
 .area-card img{transition:transform 0.25s;}
 
-/* ---- Contact page ---- */
-.contact-grid{
-  max-width:900px;
-  margin:0 auto;
-  padding:44px 24px 70px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
-  gap:18px;
-}
-.contact-card{
-  border:1px solid #e3e3e3;
-  border-radius:10px;
-  padding:28px 22px;
-  text-align:center;
-  text-decoration:none;
-  color:var(--dark);
-  transition:box-shadow 0.15s, transform 0.15s;
-}
-.contact-card:hover{box-shadow:0 10px 24px rgba(0,0,0,0.08); transform:translateY(-3px);}
-.contact-card .label{
-  font-size:0.72rem;
-  text-transform:uppercase;
-  letter-spacing:0.08em;
-  color:var(--accent);
-  font-weight:800;
-  margin-bottom:8px;
-}
-.contact-card .value{font-size:1.15rem; font-weight:700;}
-
 /* ---- Footer ---- */
 footer{
   background:var(--dark);
@@ -219,6 +286,5 @@ footer .copyright{
 
 @media (max-width:700px){
   .section-intro h1{font-size:1.5rem;}
-  header.site-nav{padding:10px 16px;}
-  header.site-nav nav{gap:12px;}
+  .nav-overlay a{font-size:1.2rem;}
 }
