@@ -275,22 +275,22 @@ label.hamburger-btn{display:flex;}
 
 /* ---- Responsive ---- */
 @media (max-width:860px){
-  .content-grid{grid-template-columns:1fr; gap:18px;}
+  .content-grid{grid-template-columns:1fr; gap:10px;}
   .content-grid.photo-left{direction:ltr;}
   .content-photo{order:-1; aspect-ratio:16/10;}
   .content-section .diag{display:none;}
 }
 @media (max-width:600px){
-  .content-section{padding:56px 5vw 40px; align-items:flex-start;}
-  .content-text h1{font-size:2.3rem; margin-bottom:8px;}
-  .content-text .subhead{font-size:1.25rem; margin-bottom:16px;}
-  .content-text p.body-text{font-size:1.02rem; margin-bottom:22px; line-height:1.55;}
-  .content-photo{aspect-ratio:4/3; margin-bottom:8px;}
+  .content-section{padding:46px 5vw 24px; align-items:flex-start;}
+  .content-text h1{font-size:2.3rem; margin-bottom:6px;}
+  .content-text .subhead{font-size:1.25rem; margin-bottom:10px;}
+  .content-text p.body-text{font-size:1.02rem; margin-bottom:14px; line-height:1.5;}
+  .content-photo{aspect-ratio:4/3; margin-bottom:4px;}
   .feature-list{gap:16px; margin-bottom:24px;}
   .feature-list .dot{width:34px; height:34px; font-size:0.95rem;}
   .feature-list .ftitle{font-size:1rem;}
   .feature-list .fdesc{font-size:0.9rem;}
-  .btn-row{gap:12px;}
+  .btn-row{gap:10px;}
   .pill-btn{padding:14px 24px; font-size:0.95rem;}
   .nav-overlay a{font-size:1.15rem;}
   .mini-area-grid{max-width:280px;}
