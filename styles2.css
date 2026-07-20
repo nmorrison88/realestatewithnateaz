@@ -70,6 +70,8 @@ label.hamburger-btn{display:flex;}
 }
 .content-section{
   position:relative;
+  min-height:100vh;
+  min-height:100dvh;
   display:flex;
   align-items:center;
   padding:90px 6vw 70px;
@@ -279,7 +281,7 @@ label.hamburger-btn{display:flex;}
   .content-section .diag{display:none;}
 }
 @media (max-width:600px){
-  .content-section{padding:64px 5vw 50px;}
+  .content-section{padding:56px 5vw 40px; align-items:flex-start;}
   .content-text h1{font-size:2.3rem; margin-bottom:8px;}
   .content-text .subhead{font-size:1.25rem; margin-bottom:16px;}
   .content-text p.body-text{font-size:1.02rem; margin-bottom:22px; line-height:1.55;}
