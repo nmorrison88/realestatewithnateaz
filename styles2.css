@@ -70,11 +70,9 @@ label.hamburger-btn{display:flex;}
 }
 .content-section{
   position:relative;
-  min-height:100vh;
-  min-height:100dvh;
   display:flex;
   align-items:center;
-  padding:90px 6vw 60px;
+  padding:90px 6vw 70px;
   overflow:hidden;
 }
 .content-section.theme-blue{background:var(--blue); color:#fff;}
@@ -281,17 +279,17 @@ label.hamburger-btn{display:flex;}
   .content-section .diag{display:none;}
 }
 @media (max-width:600px){
-  .content-section{padding:64px 5vw 30px; min-height:auto;}
-  .content-text h1{font-size:2.1rem; margin-bottom:6px;}
-  .content-text .subhead{font-size:1.15rem; margin-bottom:12px;}
-  .content-text p.body-text{font-size:0.98rem; margin-bottom:16px; line-height:1.45;}
-  .content-photo{aspect-ratio:16/9; margin-bottom:4px;}
-  .feature-list{gap:10px; margin-bottom:16px;}
-  .feature-list .dot{width:30px; height:30px; font-size:0.85rem;}
-  .feature-list .ftitle{font-size:0.92rem;}
-  .feature-list .fdesc{font-size:0.85rem;}
-  .btn-row{gap:8px;}
-  .pill-btn{padding:12px 20px; font-size:0.88rem;}
+  .content-section{padding:64px 5vw 50px;}
+  .content-text h1{font-size:2.3rem; margin-bottom:8px;}
+  .content-text .subhead{font-size:1.25rem; margin-bottom:16px;}
+  .content-text p.body-text{font-size:1.02rem; margin-bottom:22px; line-height:1.55;}
+  .content-photo{aspect-ratio:4/3; margin-bottom:8px;}
+  .feature-list{gap:16px; margin-bottom:24px;}
+  .feature-list .dot{width:34px; height:34px; font-size:0.95rem;}
+  .feature-list .ftitle{font-size:1rem;}
+  .feature-list .fdesc{font-size:0.9rem;}
+  .btn-row{gap:12px;}
+  .pill-btn{padding:14px 24px; font-size:0.95rem;}
   .nav-overlay a{font-size:1.15rem;}
-  .mini-area-grid{max-width:260px;}
+  .mini-area-grid{max-width:280px;}
 }
